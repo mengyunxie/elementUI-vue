@@ -16,7 +16,7 @@
             v-on:input="inptParent3"
         />
         <div class="btnBox">
-        <button @click="saveForm">提交</button>
+            <el-button plain @click="saveForm">提交</el-button>
         </div>
         
     </div>

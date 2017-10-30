@@ -1,23 +1,14 @@
 <template>
     <div class="page">
-        <head-top :myName="userName"></head-top>
         <div class="article-panel">
-                <div color="#6dd2c9" v-for="item in articleList" key="item.articleId">
+                <div class="time-line" v-for="item in articleList" key="item.articleId">
                     <router-link :to='{path: "/article", query: {id: item.articleId}}'>
                         <p  class="article-con">{{item.name}}</p>
                     </router-link>
                     <p class="article-info">{{item.time}}</p>
+                    <i class="typeIcon type{item.type}" :class="{ 'type1': item.type==1, 'type2': item.type==2, 'type3': item.type==3 }"></i>
                 </div>
         </div>
-        <div>
-          <el-button>默认按钮</el-button>
-          <el-button type="primary">主要按钮</el-button>
-          <el-button type="success">成功按钮</el-button>
-          <el-button type="info">信息按钮</el-button>
-          <el-button type="warning">警告按钮</el-button>
-          <el-button type="danger">危险按钮</el-button>
-        </div>
-
     </div>
 </template>
 <script>
@@ -59,11 +50,19 @@ import headTop from '../../components/headtop/headtop';
               .then(function (response) {
                 if(response.status==200){
                     that.articleList = response.data;
+                }else{
+                    that.$message({
+                      message: '服务器请求失败',
+                      type: 'warning'
+                    });
                 }
                 
               })
               .catch(function (error) {
-                    
+                    that.$message({
+                      message: '服务器请求失败',
+                      type: 'warning'
+                    });   
               });
             
         },
@@ -80,18 +79,6 @@ import headTop from '../../components/headtop/headtop';
             console.log("destroyed");
         },
         methods: {
-            handleClick () {
-                this.open = !this.open;
-            },
-            handleChange (date) {
-                this.value3 = date;
-            },
-            handleClear () {
-                this.open = false;
-            },
-            handleOk () {
-                this.open = false;
-            }
         }
     }
 </script>
@@ -103,6 +90,7 @@ import headTop from '../../components/headtop/headtop';
     width:84%;
     margin:0 auto;
     padding:10px 0px 0px 0px;
+    border-left: 1px solid #ddd;
 }
 .article-con{
     color:#666;
@@ -111,6 +99,28 @@ import headTop from '../../components/headtop/headtop';
 .article-info{
     color:#999;
     font-size: 12px;
+}
+.time-line{
+    position:relative;
+    padding:10px 0px 10px 15px;
+}
+.typeIcon{
+    display:block;
+    position:absolute;
+    top:15px;
+    left:-5px;
+    width:10px;
+    height:10px;
+    border-radius:10px;
+}
+.typeIcon.type1{
+    background-color:#6dd2c9;
+}
+.typeIcon.type2{
+    background-color:#fa5555;
+}
+.typeIcon.type3{
+    background-color:#eb9e05;
 }
 .article-panel .ivu-timeline-item-head-custom{
     margin-top:8px;
