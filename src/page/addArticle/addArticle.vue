@@ -32,7 +32,7 @@
         }
     }
 </script>
-<style scoped>
+<style lang="scss">
     .article-panel{
         width:100%;
         margin:0 auto;

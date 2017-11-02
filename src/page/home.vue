@@ -20,7 +20,7 @@ import headTop from '../components/headtop/headtop';
         }
     }
 </script>
-<style scoped>
+<style lang="scss">
 .page{  
     position:relative;
     z-index:0;

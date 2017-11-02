@@ -47,7 +47,7 @@
         }
     }
 </script>
-<style scoped>
+<style lang="scss">
 .inputBox{
     position:relative;
     width:90%;
@@ -63,26 +63,28 @@
     transition: all .4s ease
 }
 .inputLabel {
-    position: absolute;
-    display: none;
-    width: 100%;
-    left: 0;
-    padding: 12px 16px;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 12px;
-    font-weight: 500;
-    color: #333;
-    -webkit-transition: all .4s ease;
-    transition: all .4s ease;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  padding: 12px 16px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
 }
-label.inputLabel {
-    display:block;
+label {
+  &.inputLabel {
+    display: block;
     opacity: 0;
     bottom: 0;
     padding: 12px 16px;
+  }
 }
 .inputBoxActive label.inputLabel{
     display:block;

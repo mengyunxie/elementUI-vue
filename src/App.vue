@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
 form,fieldset,input,textarea,p,blockquote,th,td { 
     padding: 0; 

@@ -60,7 +60,7 @@ import myInput from '../../components/myInput/myInput';
         }
     }
 </script>
-<style scoped>
+<style lang="scss">
 .btnBox{
     padding-top:24px;
     text-align: center;

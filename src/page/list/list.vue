@@ -82,10 +82,7 @@ import headTop from '../../components/headtop/headtop';
         }
     }
 </script>
-<style scoped>
-.page{
-
-}
+<style lang="scss">
 .article-panel{
     width:84%;
     margin:0 auto;
@@ -104,27 +101,25 @@ import headTop from '../../components/headtop/headtop';
     position:relative;
     padding:10px 0px 10px 15px;
 }
-.typeIcon{
-    display:block;
-    position:absolute;
-    top:15px;
-    left:-5px;
-    width:10px;
-    height:10px;
-    border-radius:10px;
+.typeIcon {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  &.type1 {
+    background-color: #6dd2c9;
+  }
+  &.type2 {
+    background-color: #fa5555;
+  }
+  &.type3 {
+    background-color: #eb9e05;
+  }
 }
-.typeIcon.type1{
-    background-color:#6dd2c9;
-}
-.typeIcon.type2{
-    background-color:#fa5555;
-}
-.typeIcon.type3{
-    background-color:#eb9e05;
-}
-.article-panel .ivu-timeline-item-head-custom{
-    margin-top:8px;
-}
+
 .calendarBox{
     position:fixed;
     width:32px;
@@ -135,8 +130,5 @@ import headTop from '../../components/headtop/headtop';
     background-color:#6dd2c9;
     bottom:10px;
     right:10px;
-}
-.article-panel .ivu-timeline-item-head{
-    background-color: #fafafa;
 }
 </style>

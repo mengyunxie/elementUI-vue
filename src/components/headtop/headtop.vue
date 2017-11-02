@@ -3,21 +3,11 @@
         <div class="banner">
             {{userName}}
         </div>
-<!--         <Menu mode="horizontal" theme="dark" active-name="1">
-            <div class="layout-logo"></div>
-            <router-link class="layout-nav" v-for="(tabbarName,index) of tabbarNames"
-            :to="tabbarName.tabLink">
-                <MenuItem name="1">
-                    <Icon type="ios-navigate"></Icon>
-                    {{tabbarName.name}}
-                </MenuItem>
-            </router-link>
-        </Menu> -->
         <div class="tabbar"> 
             <router-link v-for="(tabbarName,index) of tabbarNames"
             :to="tabbarName.tabLink" 
             @click.native="clickFun(index)"
-            class="tabbar__item"
+            class="tabbar-item"
             active-class :key="index">
                 <i>
                     <img class="default-img" :src="tabbarName.img">
@@ -72,7 +62,7 @@ export default {
     }
 }
 </script>
-<style scoped>
+<style lang="scss">
 .headTop{
     position:fixed;
     top:0;
@@ -96,53 +86,39 @@ export default {
     width: 100%;
     height:4rem;
     background-color:#6dd2c9;
-}
-.tabbar__item {
-    display: block;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-    font-size: 0;
-    color: #fff;
-    text-align: center;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    padding: 10px 0 8px 0;
-    cursor: pointer;
-    background-color:#6dd2c9;
-}
-/*.weui-tabbar{
-    left: 0;
-    top:4rem;
-    bottom: auto;
-}
-.weui-tabbar__item{
-    padding: 10px 0 8px 0;
-    cursor: pointer;
-    background-color:#ffffff;
-}
-.weui-tabbar__item .weui-tabbar__label{
-    font-size: 11px;
-    color:#9596ab;
-}*/
-.default-img{
-    display:inline-block;
-    width:27px;
-    height:27px;
-}
-.active-img {
-    display:none;
-    width:27px;
-    height:27px;
-}
-
-.router-link-active .default-img{
-    display:none;
-}
-
-.router-link-active .active-img{
-    display:inline-block;
-}
-.router-link-active>p{
-    color: #00d3c2;
+    .tabbar-item {
+        display: block;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        font-size: 0;
+        color: #fff;
+        text-align: center;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        padding: 10px 0 8px 0;
+        cursor: pointer;
+        background-color:#6dd2c9;
+    }
+    .default-img{
+        display:inline-block;
+        width:27px;
+        height:27px;
+    }
+    .active-img {
+        display:none;
+        width:27px;
+        height:27px;
+    }
+    .router-link-active{
+        .default-img{
+            display:none;
+        }
+        .active-img{
+            display:inline-block;
+        }
+        >p{
+            color: #00d3c2;
+        }
+    }
 }
 </style>
