@@ -18,7 +18,7 @@
             :to="tabbarName.tabLink" 
             @click.native="clickFun(index)"
             class="tabbar__item"
-            active-class>
+            active-class :key="index">
                 <i>
                     <img class="default-img" :src="tabbarName.img">
                     <img class="active-img" :src="tabbarName.activeImg">

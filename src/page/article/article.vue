@@ -1,16 +1,14 @@
 <template>
     <div class="page">
         <article class="articleBox">
-            <section>
                 <h3 class="title">{{articleList.title}}</h3>
                 <p class="time">{{articleList.time}}</p>
                 <el-carousel trigger="click" height="150px" arrow="always" :autoplay="false">
-                  <el-carousel-item v-for="item in conUrl" >
+                  <el-carousel-item v-for="(item, index) in conUrl" :key="index">
                     <img :src="item" alt="">
                   </el-carousel-item>
                 </el-carousel>
                 <p class="con">{{articleList.con}}</p>
-            </section>
         </article>  
     </div>
 </template>
@@ -83,59 +81,50 @@
         }
     }
 </script>
-<style scoped>
+<style lang="scss">
 .page__title{
     text-align: center;
 }
-.editBox{
-    position:fixed;
-    width:32px;
-    height:32px;
-    text-align:center;
-    line-height:36px;
-    border-radius:16px;
-    background-color:#6dd2c9;
-    bottom:10px;
-    right:10px;
-}
 .articleBox{
-    width:90%;
+    $width:90%;
+    width:$width;
     margin:0 auto;
     text-align: left;
-}
-.title {
-    text-align:center;
-    margin-top:15px;
-}
-.time{
-    color:#999;
-    font-size: 12px;
-    text-align:right;
-    padding:5px 0px;
-}
-.articleBox .con{
-    padding:15px 0px;
+    .title {
+        text-align:center;
+        margin-top:15px;
+    }
+    .time{
+        color:#999;
+        font-size: 12px;
+        text-align:right;
+        padding:5px 0px;
+    }  
+    .con{
+        padding:15px 0px;
+    }  
 }
 .el-carousel__item{
     text-align: center;
-}
-.el-carousel__item h3 {
-color: #475669;
-font-size: 14px;
-opacity: 0.75;
-line-height: 150px;
-margin: 0;
-}
-.el-carousel__item img {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-.el-carousel__item:nth-child(2n) {
- background-color: #99a9bf;
+    h3 {
+        color: #475669;
+        font-size: 14px;
+        opacity: 0.75;
+        line-height: 150px;
+        margin: 0;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    &:nth-child(2n) {
+        background-color: #99a9bf;
+    }
+    &:nth-child(2n+1) {
+        background-color: #d3dce6;
+    }
 }
 
-.el-carousel__item:nth-child(2n+1) {
- background-color: #d3dce6;
-}
+
 </style>
