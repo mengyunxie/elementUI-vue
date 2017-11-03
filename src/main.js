@@ -7,7 +7,10 @@ import '../static/element-theme/element-theme.scss'
 import App from './App'
 import router from './router'
 import axios from 'axios';
+import VueScroller from 'vue-scroller'
+
 Vue.use(ElementUI)
+Vue.use(VueScroller)
 Vue.config.productionTip = false
 // 添加响应拦截器
 axios.interceptors.response.use(function (response) {

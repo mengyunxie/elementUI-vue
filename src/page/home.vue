@@ -20,14 +20,12 @@ import headTop from '../components/headtop/headtop';
         }
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .page{  
-    position:relative;
-    z-index:0;
+
 }
 .conBox{
-    position:relative;
-    z-index:1;
+
     padding-top:8rem;
 }
 </style>

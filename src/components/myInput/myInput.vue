@@ -47,7 +47,7 @@
         }
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .inputBox{
     position:relative;
     width:90%;
